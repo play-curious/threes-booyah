@@ -1,0 +1,16 @@
+name: Jest Tests
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install modules
+        run: yarn
+
+      - name: Check all
+        run: yarn checkAll
+
+      - name: Run tests
+        run: yarn test
